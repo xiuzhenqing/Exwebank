@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var Home = require('./routes/Home');
+var img = require('./routes/img');
+var nav = require('./routes/nav');
 
 var app = express();
 
@@ -25,7 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/Home', Home);
+app.use('/img',img);
+app.use('/app',nav);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,7 +46,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen('8002',function(){	
-	console.log('你好！！！')
+app.listen('8005',function(){
+	console.log('serve start.....');
 })
 module.exports = app;
