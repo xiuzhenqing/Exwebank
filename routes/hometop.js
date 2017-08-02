@@ -10,12 +10,12 @@ var pool=mysql.createPool({
 	port:"3306"
 });
 
-router.post("/nav",function(req,res){
+
+router.get('/hometop',function(req,res){
 	res.header("Access-Control-Allow-Origin", "*");
-		pool.query('SELECT * from nav',function(err,rows,fields){
+	pool.query('select * from hometop',function(err,rows){
 		if(err) throw err;
 		res.send(rows);
-	});
-
-});
+	})
+})
 module.exports=router;

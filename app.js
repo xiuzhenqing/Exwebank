@@ -9,6 +9,19 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var img = require('./routes/img');
 var nav = require('./routes/nav');
+var logo = require('./routes/logo');
+var hometop=require('./routes/hometop');
+var homeR1=require('./routes/homeR1');
+var homebot=require('./routes/homebot');
+var homeLb=require('./routes/homeLb');
+var enter=require('./routes/enter');
+var enterCenter=require('./routes/enterCenter');
+var enterBoth=require('./routes/enterBoth');
+var footer=require('./routes/footer');
+var single=require('./routes/single');
+var weiche=require('./routes/weiche');
+var weilidai=require('./routes/weilidai');
+var bank=require('./routes/bank');
 
 var app = express();
 
@@ -28,6 +41,19 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/img',img);
 app.use('/app',nav);
+app.use('/app',logo);
+app.use('/home',hometop);
+app.use('/home',homeR1);
+app.use('/home',homebot);
+app.use('/home',homeLb);
+app.use('/Enterprise',enter);
+app.use('/Enterprise',enterCenter);
+app.use('/Enterprise',enterBoth);
+app.use('/footer',footer);
+app.use('/Finance',single);
+app.use('/Finance',weiche);
+app.use('/Finance',weilidai);
+app.use('/Finance',bank);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
